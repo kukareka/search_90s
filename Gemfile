@@ -16,6 +16,8 @@ gem 'colorize'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -23,3 +25,6 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec_junit_formatter'
+end

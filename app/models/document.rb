@@ -7,7 +7,10 @@ class Document < ApplicationRecord
   serialize :metadata, JSON
 
   scope :with_terms, -> (terms) do
-    joins(:terms).where(terms: {term: terms}).group(:id).order('SUM(document_terms.score) DESC')
+    joins(:terms).where(terms: {term: terms}).
+        group(:id).                                 # Group terms and scores by document
+        order('SUM(document_terms.score) DESC').    # Order by document total score
+        having('COUNT(terms.id) = ?', terms.count)  # Select only documents that contain all the terms
   end
 
   after_save :refresh_terms
