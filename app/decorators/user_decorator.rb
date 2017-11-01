@@ -1,6 +1,6 @@
 class UserDecorator < Draper::Decorator
   def print
-    puts "[USER] #{object.name}".yellow
+    puts "[USER] #{object.name}".red
     puts "\tInternal ID: #{object._id}".red if object._id.present?
     puts "\tActive: #{object.active}".red
     puts "\tAlias: #{object.alias}".red if object.alias.present?
