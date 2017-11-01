@@ -1,4 +1,4 @@
-# A model calculates its fields according to the schema and calls the indexer to produce scored word bag.
+# A model calculates its fields according to the schema and calls the indexer to produce "ranked" word bag.
 
 class TermIndexer < Struct.new(:fields)
   def index

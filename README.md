@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/kukareka/search_90s.svg?style=svg)](https://circleci.com/gh/kukareka/search_90s)
+CircleCI: [![CircleCI](https://circleci.com/gh/kukareka/search_90s.svg?style=svg)](https://circleci.com/gh/kukareka/search_90s)
 
 # About
 
@@ -46,7 +46,7 @@ Run the test suite:
 $ rake
 ```
 
-[![CircleCI](https://circleci.com/gh/kukareka/search_90s.svg?style=svg)](https://circleci.com/gh/kukareka/search_90s)
+CircleCI: [![CircleCI](https://circleci.com/gh/kukareka/search_90s.svg?style=svg)](https://circleci.com/gh/kukareka/search_90s)
 
 # Drawbacks and possible improvements
 
@@ -55,4 +55,7 @@ $ rake
 - Support dynamic schema.
 - Improve tokenizer (for phone numbers etc).
 - Add stemmer.
-- Command line tool to add new objects.
+- Command line tool to add new entities.
+- Don't load all JSON to memory for extremely big datasets.
+- Improve results formatting.
+- Add results pagination.

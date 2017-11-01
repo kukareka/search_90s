@@ -10,7 +10,7 @@ class ProjectDecorator < Draper::Decorator
     puts "\tCreated: #{object.created_at}".blue if object.created_at.present?
     puts "\tExternal ID: #{object.external_id}".blue if object.external_id.present?
     puts "\tInternal ID: #{object._id}".blue if object._id.present?
-    puts "\tPublished: #{object.published}".blue
+    puts "\tPublished: #{object.published}".blue unless object.published.nil?
     puts "\tTags: #{object.tags.join(', ')}".blue if object.tags.present?
   end
 end

@@ -1,4 +1,4 @@
-# A very simple and naive tokenizer. Would be great to extend it at least with some stemmer.
+# A very simple and naive tokenizer.
 
 class Tokenizer < Struct.new(:text)
   def tokens

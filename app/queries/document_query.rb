@@ -1,4 +1,4 @@
-# The query object was extracted from model to handle query params and perform the search via model scope.
+# The query object was extracted from the model to handle query params and perform the search via model scope.
 
 class DocumentQuery < Struct.new(:query, :types)
   def results

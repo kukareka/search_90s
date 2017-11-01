@@ -1,5 +1,5 @@
 # The most of the magic happens here.
-# Text fields are extracted from metadata, tokenized and saved in a "word-bag" format that includes "score".
+# Text fields are extracted from metadata, tokenized and saved in a "word-bag" format with the field rank ("score").
 # Some fields (e. g. name) might have higher rank than the others, it affects the order of appearance in search results.
 # The field schema for each entity type is defined via DSL in relevant model classes.
 #
@@ -36,8 +36,6 @@ module IndexedFields
           value.presence && name.to_s
         when :integer
           value.presence && value.to_s
-        when :array
-          value.presence && value.join(',')
         when :array
           value.presence && value.join(',')
         when :hash
