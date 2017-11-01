@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20171101113904) do
     t.integer "document_id"
     t.integer "term_id"
     t.float "score"
+    t.index ["document_id"], name: "index_document_terms_on_document_id"
+    t.index ["term_id"], name: "index_document_terms_on_term_id"
   end
 
   create_table "documents", force: :cascade do |t|
@@ -25,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171101113904) do
 
   create_table "terms", force: :cascade do |t|
     t.string "term"
+    t.index ["term"], name: "index_terms_on_term", unique: true
   end
 
 end

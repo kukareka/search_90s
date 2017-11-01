@@ -12,6 +12,6 @@ class TermIndexer < Struct.new(:fields)
   private
 
   def tokenize(text)
-    text.split(/\W/).map(&:downcase)
+    Tokenizer.new(text).tokens
   end
 end
