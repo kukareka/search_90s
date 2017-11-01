@@ -3,7 +3,7 @@
 
 class ProjectDecorator < Draper::Decorator
   def print
-    puts "[PROJECT] #{object.name}".green
+    puts "[PROJECT] #{object.name}".blue
     puts "\tUrl: #{object.url}".blue if object.url.present?
     puts "\tDetails: #{object.details}".blue if object.details.present?
     puts "\tLocation: #{object.location.join(', ')}".blue if object.location.present?
