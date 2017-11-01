@@ -1,3 +1,5 @@
+# A model calculates its fields according to the schema and calls the indexer to produce scored word bag.
+
 class TermIndexer < Struct.new(:fields)
   def index
     fields.reduce(Hash.new(0.0)) do |total, field|

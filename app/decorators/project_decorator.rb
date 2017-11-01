@@ -1,3 +1,6 @@
+# The decorator is responsible for printing the models of corresponding type.
+# Is it worth to invent some DSL here, WDYT?
+
 class ProjectDecorator < Draper::Decorator
   def print
     puts "[PROJECT] #{object.name}".green
