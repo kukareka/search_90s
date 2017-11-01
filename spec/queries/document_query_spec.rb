@@ -50,7 +50,7 @@ RSpec.describe DocumentQuery do
     end
   end
 
-  context 'FIlter by types' do
+  context 'Filter by types' do
     let(:query) { 'nice' }
     let(:types) { %w(projects project) }
 
