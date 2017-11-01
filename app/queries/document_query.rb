@@ -1,3 +1,5 @@
+# The query object was extracted from model to handle query params and perform the search via model scope.
+
 class DocumentQuery < Struct.new(:query, :types)
   def results
     scope = Document.with_terms(query_terms)

@@ -1,3 +1,17 @@
+# The most of the magic happens here.
+# Text fields are extracted from metadata, tokenized and saved in a "word-bag" format that includes "score".
+# Some fields (e. g. name) might have higher rank than the others, it affects the order of appearance in search results.
+# The field schema for each entity type is defined via DSL in relevant model classes.
+#
+# Example:
+#
+# class User < Document
+#   metadata_field :_id, type: :integer
+#   metadata_field :active, type: :boolean
+#   metadata_field :alias, score: 7.0
+#   metadata_field :created_at, indexed: false # Don't index the field - just generate reader method.
+# end
+
 module IndexedFields
   extend ActiveSupport::Concern
 

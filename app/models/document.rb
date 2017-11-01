@@ -15,10 +15,9 @@ class Document < ApplicationRecord
   private
 
   def refresh_terms
-    indexed_terms = TermIndexer.new(indexed_fields).index
     document_terms.delete_all # document_terms should not have callbacks
 
-    indexed_terms.each do |term, score|
+    TermIndexer.new(indexed_fields).index.each do |term, score|
       t = Term.find_or_create_by!(term: term)
       document_terms.create!(term: t, score: score)
     end
